@@ -1,0 +1,44 @@
+#ifndef CHUNK_H
+#define CHUNK_H
+
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
+
+class Chunk
+{
+ public:
+  Chunk();
+  void init();
+  void update();
+  unsigned char block(int x, int y, int z);
+
+  void Cube();
+  void CubeTop(int x, int y, int z, unsigned char block);
+  void CubeBot(int x, int y, int z, unsigned char block);
+  void CubeNorth(int x, int y, int z, unsigned char block);
+  void CubeSouth(int x, int y, int z, unsigned char block);
+  void CubeEast(int x, int y, int z, unsigned char block);
+  void CubeWest(int x, int y, int z, unsigned char block);
+  
+  int exists = 0;
+
+  unsigned char* data[181][217][181];
+  unsigned char threshold = 30;
+
+  
+  int faceCount = 0;
+  
+  int chunkSizeX;
+  int chunkSizeY;
+  int chunkSizeZ;
+  int chunkX;
+  int chunkY;
+  int chunkZ;
+};
+
+#endif
