@@ -61,7 +61,7 @@ int main()
   float speed = 0.1f; // 3 units / second
   float mouseSpeed = 0.0006f;
   float horizontalAngle = 3.14f;
-  float verticalAngle = 0.0f;
+  float verticalAngle = 90.0f;
   
   //main loop
   while(!glfwWindowShouldClose(window))
@@ -103,7 +103,13 @@ int main()
     if (glfwGetKey(window,GLFW_KEY_A ) == GLFW_PRESS){
       position -= right * deltaTime * speed;
     }
-  
+    if (glfwGetKey(window,GLFW_KEY_SPACE ) == GLFW_PRESS){
+      position += up * deltaTime * speed;
+    }
+    if (glfwGetKey(window,GLFW_KEY_LEFT_SHIFT ) == GLFW_PRESS){
+      position -= up * deltaTime * speed;
+    }
+    
     cam.view = glm::lookAt(
       position, // position
       position+direction, // camera center
