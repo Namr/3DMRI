@@ -2,7 +2,6 @@
 #define MRI_H
 
 #include <GL/glew.h>
-#include <SOIL/SOIL.h>
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>

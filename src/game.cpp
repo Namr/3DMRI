@@ -1,7 +1,6 @@
 #define GLEW_STATIC
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-#include <SOIL/SOIL.h>
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -158,7 +157,7 @@ static GLuint load_shader(char *filepath, GLenum type)
     return 0;
   }
  
-  glShaderSource(shader, 1,(const char * const *) &buffer, (GLint *) &len);
+  glShaderSource(shader, 1,(const char **) &buffer, (GLint *) &len);
   free(buffer);
   return shader;
 }

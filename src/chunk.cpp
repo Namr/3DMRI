@@ -274,7 +274,7 @@ GLuint Chunk::loadShader(const char *filepath, GLenum type)
     return 0;
   }
  
-  glShaderSource(shader, 1,(const char * const *) &buffer, (GLint *) &len);
+  glShaderSource(shader, 1,(const char **) &buffer, (GLint *) &len);
   free(buffer);
   return shader;
 }
