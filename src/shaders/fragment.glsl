@@ -14,6 +14,7 @@ void main()
     }
     else
     {
+	//outColor = vec4(1.0, 0.6, 0.8, 1.0);
 	outColor = vec4(Color, Color, Color, 1.0);	
     }
 }
